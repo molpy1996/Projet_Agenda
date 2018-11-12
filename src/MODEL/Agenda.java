@@ -42,13 +42,27 @@ public class Agenda {
     }
 
     //autres methodes
-    
     /**
      * Ouvrir l'agenda d'une personne specifiee ==> si boolean rappel == true;
      * afficher le libelle du RdV dans un pop-up 15min avant
      */
- 
-    
+    public void OuvrirAgd() {
+        //on charge l'agenda à partir d'un fichier en lecture
+        try {
+            File agd_a_lire = new File("C:\\Projet_Agenda_ING3\\saved_agendas");
+            Scanner sc = new Scanner(agd_a_lire);
+
+            //on lit le fichier ligne par ligne
+            /*while (sc.) {
+
+            }*/
+
+            sc.close();
+        } catch (Exception e) {
+            System.out.print("Erreur d'ouverture du fichier en lecture\n");
+        }
+    }
+
     /**
      * sauvegarder l'agenda dans un fichier ET fermer l'agenda
      */
@@ -114,14 +128,12 @@ public class Agenda {
      * conjonction de criteres
      *
      */
-    
     /**
      * modifier un RdV (s'occcupe pas de l'affichage)
      */
     public void modifierRdV() {
 
     }
-    
 
     /**
      * ajouter un RdV (si le creneau date-horaire est libre)
@@ -139,7 +151,6 @@ public class Agenda {
         }
     }
 
-    
     /**
      * supprimer un RdV
      *
@@ -151,7 +162,6 @@ public class Agenda {
         //on reinitialise a null l'objet rdv
         _rdv = null;
     }
-    
 
     /**
      * supprimer TOUS les RdVs
