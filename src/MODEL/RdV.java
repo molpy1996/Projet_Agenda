@@ -20,7 +20,7 @@ public class RdV implements Comparable <RdV> {
     private String libelle;
     private boolean rappel;
 
-    //constructeur par dÃ©faut
+    //constructeur par defaut
     public RdV() {
         this.date = LocalDate.parse("0000-00-00");
         this.h_debut = LocalTime.parse("00:00");

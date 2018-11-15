@@ -16,41 +16,70 @@ import java.util.Scanner;
  */
 public class GestionnaireIHM {
     
-    public GestionnaireIHM()
-    {
-  
-        //Variables 
+    
+    //Variables 
         int choix;
         int choix1;
         
         Scanner s = new Scanner(System.in);
         
+    
         /**
-         * Faire un systeme de connexion avec une lecture de fichier 
-         * l'utilisateur doit se connecter ou creer un compte pour pouvoir utiliser l'agenda
-         * Chaque utilisateur doit avoir son propre fichier txt
-        */
-     do
-     {
-            System.out.println();
-            System.out.println("******************* MENU *******************");
-            System.out.println("     (1) --> Creer un nouvel agenda  ");
-            System.out.println("     (2) --> Ouvrir un agenda existant  ");
-            System.out.println("     (3) --> Quitter        ");
-            System.out.println("********************************************");
-            System.out.println();
-            System.out.println();
-            System.out.println("#### VOTRE CHOIX #### ");
-            choix=s.nextInt();
+         * Les premieres methodes ont ete faites afin d'aleger le GestionnaireIHM.
+         * De plus c'est pour rendre le programme plus lisible et plus comprehensible
+         */
         
+    
         
-        switch (choix)
+    void aurevoir() /// Affichage fin du programme! 
         {
-        
-            case 1:
-            {          
             
-             do {
+            System.out.println();
+            System.out.println();
+            System.out.println();
+            System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+            System.out.println("XXXXXXXXXXXXXXXXXXXX A BIENTOT ! XXXXXXXXXXXXXXXXXXXX");
+            System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");               
+            System.out.println();
+            System.out.println();
+        }
+    
+   
+    
+    
+    final void message_erreur()  /// Message d'erreur !
+    {
+        System.out.println();
+        System.out.println();
+        System.out.println("################################################");
+        System.out.println("##################### ERREUR ###################");
+        System.out.println("################################################");
+        System.out.println();
+        System.out.println();
+    }
+   
+    
+    
+    final void menu_principal ()
+    {
+        System.out.println();
+        System.out.println("******************* MENU *******************");
+        System.out.println("     (1) --> Creer un nouvel agenda  ");
+        System.out.println("     (2) --> Ouvrir un agenda existant  ");
+        System.out.println("     (3) --> Quitter        ");
+        System.out.println("********************************************");
+        System.out.println();
+        System.out.println();
+        System.out.println("#### VOTRE CHOIX #### ");
+        choix=s.nextInt();
+    }
+    
+    
+    
+    
+    final void menu1()    /// Affichage du menu de la creation d'un nouvel agenda!
+        {
+            do {
                     System.out.println();
                     System.out.println("******************* CREATION D'UN NOUVEL AGENDA *******************");
                     System.out.println("     (1) --> Ajouter un Rdv        ");
@@ -97,24 +126,21 @@ public class GestionnaireIHM {
                 
                         default:
                         {             
-                            System.out.println();
-                            System.out.println();
-                            System.out.println("################################################");
-                            System.out.println("##################### ERREUR ###################");
-                            System.out.println("################################################");
-                            System.out.println();
-                            System.out.println();
-
+                           message_erreur();
                         }
                 }
 
                 } while (choix1!=1 && choix1!=2 && choix1!=3 && choix1!=4);
-                     break;
-             }
-             
-             
-            
-            case 2:
+        }
+    
+    
+   
+    
+    
+     
+     
+    
+    final void menu2()    /// Affichage du menu de l'agenda existant !
         {
             do {      /// Systeme de blindage ! 
                 
@@ -189,19 +215,46 @@ public class GestionnaireIHM {
                 
                 default:
                 {
-                    System.out.println();
-                    System.out.println();
-                    System.out.println("################################################");
-                    System.out.println("##################### ERREUR ###################");
-                    System.out.println("################################################");
-                    System.out.println();
-                    System.out.println();
+                    message_erreur();
                 }
             }
-            
-            break;
-            
         }
+    
+    
+    
+    
+    
+    
+    
+    public GestionnaireIHM() /// Ceci
+    {
+   
+        /**
+         * Faire un systeme de connexion avec une lecture de fichier 
+         * l'utilisateur doit se connecter ou creer un compte pour pouvoir utiliser l'agenda
+         * Chaque utilisateur doit avoir son propre fichier txt
+        */
+     do
+     {
+            
+        menu_principal();
+        
+        switch (choix)
+        {
+        
+            case 1:
+            {
+                menu1();
+                break;
+             }
+             
+             
+            
+            case 2:
+            {      
+                menu2();
+                break;            
+            }
         
             case 3 :
             {
@@ -217,18 +270,20 @@ public class GestionnaireIHM {
             
             default : 
             {
-                System.out.println();
-                System.out.println();
-                System.out.println("################################################");
-                System.out.println("##################### ERREUR ###################");
-                System.out.println("################################################");
-                System.out.println();
-                System.out.println();
+                message_erreur();
             }
         }
      } while(choix!=1 && choix!=2 && choix!=3);
+     
+     
+     aurevoir();
+     
+    }  
+       
     }
+
+
         
-}
+
     
 
