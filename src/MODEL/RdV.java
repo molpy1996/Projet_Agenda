@@ -5,6 +5,7 @@
  */
 package MODEL;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -12,7 +13,7 @@ import java.time.LocalTime;
  *
  * @author Victor BRIERE
  */
-public class RdV implements Comparable <RdV> {
+public class RdV implements Comparable<RdV>, Serializable{
 
     private LocalDate date;
     private LocalTime h_debut;
@@ -112,21 +113,19 @@ public class RdV implements Comparable <RdV> {
     /**
      * supprimer TOUS les RdVs (Ã  faire dans agenda ?)
      */
-
     @Override
     public int compareTo(RdV o) {
-        
+
         int compare = this.getDate().compareTo(o.getDate());
-        if(compare == 0){
+        if (compare == 0) {
             compare = this.getHdebut().compareTo(o.getHdebut());
         }
-        return compare;       
+        return compare;
     }
-    
+
     @Override
-    public String toString(){
-        return "libelle : " + getLibelle()+  "date : " + getDate() + " Hdebut : " 
-                + getHdebut() + "\n";
+    public String toString() {
+        return this.getDate() + "/" + this.getHdebut() + "/" + this.getHfin() + "/" + this.getLibelle() + "/" + this.getRappel() + "\r\n";
     }
 
 }

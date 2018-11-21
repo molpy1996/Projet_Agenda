@@ -48,8 +48,9 @@ public class GestionnaireIHM {
         {
         
             case 1:
-            {          
-            
+            {  //mettre le do while et le switch du case1 dans une fonction 
+               //appeler la fonction ici
+                
              do {
                     System.out.println();
                     System.out.println("******************* CREATION D'UN NOUVEL AGENDA *******************");
@@ -69,12 +70,15 @@ public class GestionnaireIHM {
                         case 1 :
                         {
                             //Ajouter un Rdv
+                            
                             break;
                         }
 
                         case 2:
                         {
                             //Modifier un Rdv
+                            //faire un switch avec 1 setter d'un attribut dans chaque case 
+                            //(à faire dans une fonction et appeler la fonction ici)
                             break;
                         }
 
@@ -116,6 +120,7 @@ public class GestionnaireIHM {
             
             case 2:
         {
+            //idem que case 1 : mettre tout ça dans une fonction et appeler la fonction ici
             do {      /// Systeme de blindage ! 
                 
                     System.out.println();
