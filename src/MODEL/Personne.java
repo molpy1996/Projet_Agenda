@@ -5,11 +5,13 @@
  */
 package MODEL;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Victor Briere
  */
-public class Personne {
+public class Personne implements Serializable {
     
     private String login;
     private String mdp;
@@ -78,4 +80,8 @@ public class Personne {
         this.agd = agd;
     }
     
+    @Override
+    public String toString(){
+        return "nom : "+getNom()+" prenom : "+getPrenom()+" login : "+getLogin()+" mdp : "+getMdp()+"\n\r";
+    }
 }

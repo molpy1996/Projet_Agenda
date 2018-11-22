@@ -125,7 +125,7 @@ public class RdV implements Comparable<RdV>, Serializable{
 
     @Override
     public String toString() {
-        return this.getDate() + "/" + this.getHdebut() + "/" + this.getHfin() + "/" + this.getLibelle() + "/" + this.getRappel() + "\r\n";
+        return getDate() + "/" + getHdebut() + "/" + getHfin() + "/" + getLibelle() + "/" + getRappel() + "\r\n";
     }
 
 }
